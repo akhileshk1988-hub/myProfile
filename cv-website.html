@@ -1,0 +1,805 @@
+<!DOCTYPE html>
+<!-- saved from url=(0052)file:///C:/Users/administrator1/Downloads/index.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Akhilesh Krishna Prakash - Technical Program Manager</title>
+    <link href="./index2_files/css2" rel="stylesheet">
+    <style>
+        :root {
+            --color-primary: #FF6B6B;
+            --color-secondary: #4ECDC4;
+            --color-accent: #FFE66D;
+            --color-purple: #A8DADC;
+            --color-dark: #1A535C;
+            --color-light: #F7FFF7;
+            --color-text: #2D3142;
+            --spacing-unit: 1.5rem;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Work Sans', sans-serif;
+            color: var(--color-text);
+            background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 50%, #a8edea 100%);
+            background-attachment: fixed;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Animated Background Elements */
+        .bg-shapes {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            pointer-events: none;
+            overflow: hidden;
+        }
+
+        .shape {
+            position: absolute;
+            opacity: 0.3;
+            animation: float 20s infinite ease-in-out;
+        }
+
+        .shape.circle {
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            background: var(--color-secondary);
+            top: 10%;
+            left: -100px;
+            animation-delay: 0s;
+        }
+
+        .shape.square {
+            width: 200px;
+            height: 200px;
+            background: var(--color-primary);
+            top: 60%;
+            right: -50px;
+            transform: rotate(45deg);
+            animation-delay: 3s;
+        }
+
+        .shape.triangle {
+            width: 0;
+            height: 0;
+            border-left: 150px solid transparent;
+            border-right: 150px solid transparent;
+            border-bottom: 250px solid var(--color-accent);
+            bottom: 10%;
+            left: 30%;
+            animation-delay: 6s;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            33% { transform: translateY(-30px) rotate(10deg); }
+            66% { transform: translateY(20px) rotate(-10deg); }
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: var(--spacing-unit);
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Header/Hero Section */
+        header {
+            text-align: center;
+            padding: 4rem 2rem;
+            margin-bottom: 3rem;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 30px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+            backdrop-filter: blur(10px);
+            animation: slideDown 1s ease-out;
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, var(--color-accent) 0%, transparent 70%);
+            opacity: 0.2;
+            animation: rotate 30s linear infinite;
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Profile Picture */
+        .profile-pic-container {
+            position: relative;
+            z-index: 1;
+            margin-bottom: 2rem;
+            display: flex;
+            justify-content: center;
+        }
+
+        .profile-pic {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid white;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .profile-pic:hover {
+            transform: scale(1.05);
+        }
+
+        .profile-pic-placeholder {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            color: white;
+            font-weight: 700;
+            border: 5px solid white;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            font-family: 'Playfair Display', serif;
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 0.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .tagline {
+            font-size: 1.3rem;
+            color: var(--color-dark);
+            font-weight: 300;
+            margin-bottom: 2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            position: relative;
+            z-index: 1;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 1rem;
+            color: var(--color-dark);
+            transition: transform 0.3s ease;
+        }
+
+        .contact-item:hover {
+            transform: translateY(-3px);
+        }
+
+        .contact-item a, a.contact-item {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        a.contact-item:hover {
+            color: var(--color-primary);
+        }
+
+        .contact-item::before {
+            content: '●';
+            color: var(--color-primary);
+            font-size: 1.5rem;
+        }
+
+        /* Section Styling */
+        section {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 25px;
+            padding: 3rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+            animation: fadeInUp 0.8s ease-out;
+            animation-fill-mode: both;
+            position: relative;
+            overflow: hidden;
+        }
+
+        section:nth-child(2) { animation-delay: 0.1s; }
+        section:nth-child(3) { animation-delay: 0.2s; }
+        section:nth-child(4) { animation-delay: 0.3s; }
+        section:nth-child(5) { animation-delay: 0.4s; }
+        section:nth-child(6) { animation-delay: 0.5s; }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, var(--color-primary), var(--color-secondary), var(--color-accent));
+        }
+
+        h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            color: var(--color-dark);
+            margin-bottom: 2rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background: var(--color-primary);
+            border-radius: 2px;
+        }
+
+        /* Summary */
+        .summary {
+            font-size: 1.15rem;
+            line-height: 1.8;
+            color: var(--color-text);
+        }
+
+        .summary p {
+            margin-bottom: 1rem;
+        }
+
+        /* Experience & Education */
+        .timeline-item {
+            margin-bottom: 2.5rem;
+            padding-left: 2rem;
+            border-left: 3px solid var(--color-secondary);
+            position: relative;
+            transition: transform 0.3s ease;
+        }
+
+        .timeline-item:hover {
+            transform: translateX(10px);
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -8px;
+            top: 0;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: var(--color-primary);
+            box-shadow: 0 0 0 4px rgba(255, 107, 107, 0.2);
+        }
+
+        .timeline-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            flex-wrap: wrap;
+            margin-bottom: 0.5rem;
+            gap: 1rem;
+        }
+
+        .job-title, .degree {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: var(--color-dark);
+        }
+
+        .company, .school {
+            font-size: 1.1rem;
+            color: var(--color-secondary);
+            font-weight: 600;
+            margin-top: 0.2rem;
+        }
+
+        .date {
+            font-size: 0.95rem;
+            color: #666;
+            background: var(--color-accent);
+            padding: 0.3rem 1rem;
+            border-radius: 20px;
+            font-weight: 600;
+        }
+
+        .description {
+            margin-top: 0.8rem;
+            color: var(--color-text);
+            line-height: 1.7;
+        }
+
+        .description ul {
+            margin-left: 1.5rem;
+            margin-top: 0.5rem;
+        }
+
+        .description li {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Skills */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .skill-category h3 {
+            font-size: 1.3rem;
+            color: var(--color-dark);
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+        }
+
+        .skill-tag {
+            background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+            color: white;
+            padding: 0.6rem 1.2rem;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            cursor: default;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .skill-tag:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Certifications */
+        .cert-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .cert-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 15px;
+            padding: 1.5rem;
+            color: white;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+            cursor: pointer;
+            position: relative;
+            text-decoration: none;
+            display: block;
+        }
+
+        .cert-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+        }
+
+        .cert-card:nth-child(2) {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+        }
+
+        .cert-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .cert-card p {
+            margin-bottom: 0.5rem;
+        }
+
+        .cert-download-icon {
+            position: absolute;
+            top: 1.5rem;
+            right: 1.5rem;
+            font-size: 1.5rem;
+            opacity: 0.8;
+        }
+
+        .cert-card:hover .cert-download-icon {
+            opacity: 1;
+            transform: scale(1.2);
+            transition: all 0.3s ease;
+        }
+
+        .upload-instruction {
+            background: rgba(255, 230, 109, 0.3);
+            padding: 1rem;
+            border-radius: 10px;
+            margin-bottom: 1.5rem;
+            text-align: center;
+            font-size: 0.95rem;
+            color: var(--color-dark);
+            border: 2px dashed var(--color-accent);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            h2 {
+                font-size: 2rem;
+            }
+
+            section {
+                padding: 2rem 1.5rem;
+            }
+
+            .contact-info {
+                flex-direction: column;
+                align-items: center;
+                gap: 1rem;
+            }
+
+            .timeline-header {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .profile-pic, .profile-pic-placeholder {
+                width: 150px;
+                height: 150px;
+            }
+        }
+
+        /* Scroll Animation */
+        .scroll-indicator {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 50px;
+            height: 50px;
+            background: var(--color-primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+            z-index: 1000;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .scroll-indicator:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-shapes">
+        <div class="shape circle"></div>
+        <div class="shape square"></div>
+        <div class="shape triangle"></div>
+    </div>
+
+    <div class="container">
+        <header>
+            <!-- Profile Picture -->
+            <div class="profile-pic-container">
+                <!-- Replace 'path/to/your/profile-picture.jpg' with your actual image path -->
+                <!-- Uncomment the img tag below and comment out the placeholder when you add your photo -->
+                <img src="Akhilesh_profilePic.jpg" alt="Akhilesh Krishna Prakash" class="profile-pic">
+            </div>
+
+            <h1>Akhilesh Krishna Prakash</h1>
+            <p class="tagline">Technical Program Manager – Automotive Embedded &amp; EV Inverter Platforms</p>
+            <div class="contact-info">
+                <a href="mailto:akhileshk1988@gmail.com" class="contact-item" style="text-decoration: none; color: inherit;">akhileshk1988@gmail.com</a>
+                <div class="contact-item">+49 176 80451326</div>
+                <div class="contact-item">Fürth, Bavaria, Germany</div>
+                <a href="https://www.linkedin.com/in/akhileshkp" target="_blank" class="contact-item" style="text-decoration: none; color: inherit;">linkedin.com/in/akhileshkp</a>
+            </div>
+        </header>
+
+        <section id="summary">
+            <h2>Summary</h2>
+            <div class="summary">
+                <p>
+                    Technical Program Manager with 5+ years of experience in automotive embedded software, 
+                    specializing in EV inverter and power electronics platforms on Infineon AURIX.
+                </p>
+                <p>
+                    Owns transversal low-level and safety software platforms across multiple P1/P2 programs, 
+                    balancing product-specific demands with long-term reuse under ASPICE and ISO 26262 constraints.
+                </p>
+                <p>
+                    Brings broader software leadership experience across complex programs, with a proven track 
+                    record of program-level ownership, cross-OEM delivery (VW Group, Daimler, Stellantis, RSA, 
+                    Mahindra), and decision-making at the intersection of architecture, safety, and delivery.
+                </p>
+            </div>
+        </section>
+
+        <section id="experience">
+            <h2>Experience</h2>
+            
+            <div class="timeline-item">
+                <div class="timeline-header">
+                    <div>
+                        <div class="job-title">Software Project Manager</div>
+                        <div class="company">Valeo Deutschland – EV Inverter &amp; Power Electronics Software</div>
+                    </div>
+                    <div class="date">08/2023 – Present</div>
+                </div>
+                <div class="description">
+                    <strong>Erlangen, Bavaria, Germany</strong>
+                    <ul>
+                        <li>Own program-level delivery of transversal EV inverter software platforms (LLSW &amp; Safety SW) on Infineon AURIX TC3x, enabling reuse across multiple P2 programs</li>
+                        <li>Act as single-point program owner for low-level and safety software scope, balancing OEM-specific requirements with platform strategy</li>
+                        <li>Lead cross-functional global teams (14+ engineers) across development, safety, validation, and quality under ASPICE and ISO 26262 constraints</li>
+                        <li>Drive platform vs product decision-making in alignment with architects, functional safety managers, and customer-facing teams</li>
+                        <li>Support OEM technical governance and escalation handling with VW Group, Daimler, Stellantis, Mahindra, and others</li>
+                        <li>Ensure audit readiness and delivery stability for safety-critical software milestones</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-header">
+                    <div>
+                        <div class="job-title">Software Engineering Manager</div>
+                        <div class="company">Valeo Deutschland</div>
+                    </div>
+                    <div class="date">10/2020 – 10/2023</div>
+                </div>
+                <div class="description">
+                    <strong>Erlangen, Bavaria, Germany</strong>
+                    <ul>
+                        <li>Led low-level software platforms across multiple P1 and P2 automotive programs, supporting series and pre-series milestones</li>
+                        <li>Owned portfolio-level prioritization across competing OEM demands, ensuring delivery without compromising safety or reuse strategy</li>
+                        <li>Operated at the interface of architecture, delivery, and customer milestones for Infineon AURIX TC3x software stacks</li>
+                        <li>Enabled scalable team ownership models across SWE levels to optimize utilization under safety constraints</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-header">
+                    <div>
+                        <div class="job-title">Technical Lead</div>
+                        <div class="company">Intershop Communications AG</div>
+                    </div>
+                    <div class="date">03/2018 – 12/2019</div>
+                </div>
+                <div class="description">
+                    <strong>Nürnberg Area, Germany</strong>
+                    <ul>
+                        <li>Led agile teams delivering digital solutions for BMW and other enterprise clients</li>
+                        <li>Owned backlog, stakeholder communication, and release planning</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-header">
+                    <div>
+                        <div class="job-title">Software Consultant</div>
+                        <div class="company">D.O.M. Datenverarbeitung GmbH</div>
+                    </div>
+                    <div class="date">06/2014 – 01/2018</div>
+                </div>
+                <div class="description">
+                    <ul>
+                        <li>Combined consulting, development, and Scrum management roles</li>
+                        <li>Delivered multiple applications under tight timelines</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-header">
+                    <div>
+                        <div class="job-title">Senior Software Engineer</div>
+                        <div class="company">Capgemini</div>
+                    </div>
+                    <div class="date">06/2011 – 09/2013</div>
+                </div>
+                <div class="description">
+                    <strong>Bengaluru Area, India</strong>
+                    <ul>
+                        <li>Software development, requirements engineering, mentoring</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="education">
+            <h2>Education</h2>
+            
+            <div class="timeline-item">
+                <div class="timeline-header">
+                    <div>
+                        <div class="degree">Master of Business Administration</div>
+                        <div class="school">TH Nürnberg | Ohm Professional</div>
+                    </div>
+                    <div class="date">2013 – 2017</div>
+                </div>
+                <div class="description">
+                    <strong>General Management</strong><br>
+                    Nürnberg, Germany
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-header">
+                    <div>
+                        <div class="degree">Bachelor of Engineering</div>
+                        <div class="school">Visvesvaraya Technological University</div>
+                    </div>
+                    <div class="date">2008 – 2011</div>
+                </div>
+                <div class="description">
+                    <strong>Electronics and Communications</strong><br>
+                    Bengaluru, India
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-header">
+                    <div>
+                        <div class="degree">Diploma</div>
+                        <div class="school">State Board of Technical Education and Training</div>
+                    </div>
+                    <div class="date">2005 – 2008</div>
+                </div>
+                <div class="description">
+                    <strong>Electronics and Communications</strong><br>
+                    Bengaluru, India
+                </div>
+            </div>
+        </section>
+
+        <section id="skills">
+            <h2>Top Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Program Management</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Technical Program Management</span>
+                        <span class="skill-tag">Platform &amp; Reuse Strategy</span>
+                        <span class="skill-tag">Cross-OEM Delivery</span>
+                        <span class="skill-tag">Safety Program Ownership</span>
+                        <span class="skill-tag">Agile / Hybrid Delivery</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Automotive &amp; Embedded</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Automotive Embedded Software</span>
+                        <span class="skill-tag">EV Inverter Platforms</span>
+                        <span class="skill-tag">Power Electronics</span>
+                        <span class="skill-tag">Infineon AURIX TC3x</span>
+                        <span class="skill-tag">Low-Level Software (Drivers)</span>
+                        <span class="skill-tag">MCAL &amp; Microcontroller</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Standards &amp; Processes</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">ASPICE (SWE)</span>
+                        <span class="skill-tag">ISO 26262 Functional Safety</span>
+                        <span class="skill-tag">ASIL Software</span>
+                        <span class="skill-tag">Scrum</span>
+                        <span class="skill-tag">V-Model</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="certifications">
+            <h2>Certifications</h2>
+            
+            <div class="cert-grid">
+                <!-- Replace 'PRINCE2-Certificate.pdf' with your actual PDF filename -->
+                <a href="PRINCE2_Foundation-certificate.pdf" class="cert-card" target="_blank" download="">
+                    <span class="cert-download-icon">📥</span>
+                    <h3>PRINCE2 Foundation</h3>
+                    <p>Project Management Certification</p>
+                    <small>Click to download certificate</small>
+                </a>
+                
+                <!-- Replace 'PSPO-Certificate.pdf' with your actual PDF filename -->
+                <a href="PSPO-I_Akhilesh-Krishna-Prakash.pdf" class="cert-card" target="_blank" download="">
+                    <span class="cert-download-icon">📥</span>
+                    <h3>Professional Scrum Product Owner I</h3>
+                    <p>Agile Product Ownership</p>
+                    <small>Click to download certificate</small>
+                </a>
+            </div>
+        </section>
+    </div>
+
+    <div class="scroll-indicator" onclick="window.scrollTo({top: 0, behavior: &#39;smooth&#39;})">
+        ↑
+    </div>
+
+    <script data-cfasync="false" src="file:///C:/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+
+        // Show/hide scroll indicator
+        const scrollIndicator = document.querySelector('.scroll-indicator');
+        window.addEventListener('scroll', ()</script></body></html>
